@@ -1,0 +1,228 @@
+/* ---------- Variables and reset ---------- */
+:root {
+  --bg: #bfe3f2;          
+  --green: #1f5a3a;       
+  --green-dark: #163f29;
+  --white: #ffffff;
+  --fridge-inside: #eef8fc;
+}
+
+/*this porportions the page, likely will change as we move things around */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* this is the theme of the page kinda */
+body {
+  font-family: "Times New Roman", Times, serif;
+  background-color: var(--bg);
+  color: var(--green);
+  min-height: 100vh;
+}
+
+/* this effects all buttons!! */
+.btn {
+  display: inline-block;
+  padding: 12px 32px;
+  background-color: var(--green);
+  color: var(--white);
+  border: 2px solid var(--green);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1.15rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--green-dark);
+}
+
+
+
+
+/* Home Page */
+.back-link {
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  color: var(--green);
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.ingredients-form {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 72px 24px 110px;   /* bottom room so submit never covers content */
+  gap: 28px;
+}
+
+.page-title {
+  font-size: 2.5rem;
+}
+
+/* Search bar */
+.search-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 520px;
+}
+
+.search-row input[type="search"] {
+  flex: 1;
+  padding: 12px 16px;
+  font-family: inherit;
+  font-size: 1.1rem;
+  color: var(--green);
+  background-color: var(--white);
+  border: 2px solid var(--green);
+  border-radius: 8px;
+  outline: none;
+}
+
+.search-row input[type="search"]:focus {
+  box-shadow: 0 0 0 3px rgba(31, 90, 58, 0.25);
+}
+
+.search-btn {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--green);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: var(--green-dark);
+}
+
+.search-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: var(--white);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+/* Fridge + dietary row */
+.lower-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 56px;
+  margin-top: 8px;
+}
+
+/* CSS fridge we've planned to not use this, but i'll keep it in as a placeholder. */
+.fridge-scene {
+  perspective: 900px;          /* opens the door */
+  padding-left: 70px;          /* space for the open door */
+  padding-top: 20px;
+}
+
+.fridge {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  border: 8px solid var(--green);
+  border-radius: 10px;
+  background-color: var(--fridge-inside);
+  transform-style: preserve-3d;
+}
+
+.fridge-interior {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 8px 6px;
+}
+
+.shelf {
+  height: 6px;
+  background-color: var(--green);
+  opacity: 0.55;
+  border-radius: 3px;
+  box-shadow: 0 4px 0 rgba(31, 90, 58, 0.15);
+}
+
+.fridge-door {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 200px;
+  height: 300px;
+  background-color: var(--white);
+  border: 8px solid var(--green);
+  border-radius: 10px;
+  transform-origin: left center;   /* hinge on the left edge */
+  transform: rotateY(-72deg);      /* swung open toward the viewer */
+}
+
+.door-handle {
+  position: absolute;
+  top: 40%;
+  right: 12px;
+  width: 8px;
+  height: 70px;
+  background-color: var(--green);
+  border-radius: 4px;
+}
+
+/* Dietary restrictions  */
+.dietary {
+  border: 2px solid var(--green);
+  border-radius: 8px;
+  padding: 14px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 190px;
+}
+
+.dietary legend {
+  padding: 0 8px;
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+.dietary label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.dietary input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: var(--green);
+  cursor: pointer;
+}
+
+/*submit button */
+.submit-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+}
+

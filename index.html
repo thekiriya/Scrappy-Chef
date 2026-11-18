@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrappy Chef</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="ingredients-page">
+ 
+
+  <form class="ingredients-form" action="#" method="get">
+    <h1 class="page-title">Input Ingredients</h1>
+<!-- this is the search bar, doesn't work yet, but inputs can be written -->
+    <div class="search-row">
+      <input
+        type="search"
+        id="ingredient-search"
+        name="ingredients"
+        placeholder="Chicken, rice, spinach..."
+        aria-label="Input ingredients"
+      >
+       <!-- this is the search icon, will act as submit button to add current ingredient to dictionary. 
+        doesn't work yet -->
+      <button type="button" class="search-btn" aria-label="Search">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="10" cy="10" r="6" />
+          <line x1="14.5" y1="14.5" x2="21" y2="21" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="lower-section">
+      <!-- fridge built using stylescss -->
+      <div class="fridge-scene" aria-label="Open empty fridge">
+        <div class="fridge">
+          <div class="fridge-interior">
+            <div class="shelf"></div>
+            <div class="shelf"></div>
+            <div class="shelf"></div>
+            <div class="shelf"></div>
+          </div>
+          <div class="fridge-door">
+            <div class="door-handle"></div>
+          </div>
+        </div>
+      </div>
+  <!-- holds labels for dietary restrictions -->
+      <fieldset class="dietary">
+        <legend>Dietary Restrictions</legend>
+        <label><input type="checkbox" name="diet" value="vegan"> Vegan</label>
+        <label><input type="checkbox" name="diet" value="vegetarian"> Vegetarian</label>
+        <label><input type="checkbox" name="diet" value="pescatarian"> Pescatarian</label>
+        <label><input type="checkbox" name="diet" value="gluten-free"> Gluten-free</label>
+        <label><input type="checkbox" name="diet" value="dairy-free"> Dairy-free</label>
+        <label><input type="checkbox" name="diet" value="nut-free"> Nut-free</label>
+        <label><input type="checkbox" name="diet" value="halal"> Halal</label>
+        <label><input type="checkbox" name="diet" value="kosher"> Kosher</label>
+      </fieldset>
+    </div>
+
+    <button type="submit" class="btn submit-btn">Submit</button>
+  </form>
+</body>
+</html>
